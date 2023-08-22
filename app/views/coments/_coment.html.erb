@@ -1,0 +1,18 @@
+<%unless coment.archived?%>
+
+<p>
+    <strong><%= coment.comenter %> </strong><i>Thinks:</i>
+</p>
+
+<p>
+    <%= coment.body %>
+</p>
+
+<p>
+<%= link_to "Remove Thought", [coment.article,coment], data:{
+    turbo_method: :delete,
+    turbo_confirm: "Remove this thought?"
+}%>
+</p>
+
+<%end%>

@@ -1,0 +1,18 @@
+<h1><%= @article.title %></h1>
+
+<p><%= @article.body%></p>
+
+
+  <p><%= link_to "Edit", edit_article_path(@article) %> |
+  <%= link_to "Delete", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure you want to delete this article?"
+                  }%> |
+  <%= link_to "Home", root_path %></p>
+
+<h2>What others think</h2>
+<%=render @article.coments%>
+
+<h2>What do you think?</h2>
+
+<%=render 'coments/form'%>
